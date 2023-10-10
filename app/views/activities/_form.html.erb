@@ -1,0 +1,5 @@
+<%= simple_form_for [@activity.management.organisation.user, @activity.management.organisation, @activity.management, @activity] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :status %> 
+  <%= f.button :submit %>
+<% end %>

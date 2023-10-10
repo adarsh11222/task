@@ -1,0 +1,14 @@
+<h1><%= @management.name %></h1>
+<h4><%= @management.work %></h4>
+<% @user = User.find(params[:user_id])%>
+<h4>Activities</h4><hr>
+<% @management.activities.each do |act| %>
+
+     <div class="card bg-secondary" style="width: 18rem;">
+  <div class="card-body"> 
+    <p><%=act.name%></p>
+    <%= link_to 'view', user_organisation_management_activity_path(@user,@organisation,@management,act), class:"btn btn-info" %>
+  </div>
+  </div>
+<% end %>
+<%= link_to 'create Activity', new_user_organisation_management_activity_path(@user,@organisation,@management), class:"btn btn-success" %>

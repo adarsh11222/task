@@ -1,0 +1,5 @@
+<%= simple_form_for [@management.organisation.user, @management.organisation, @management] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :work %>
+  <%= f.button :submit %>
+<% end %>

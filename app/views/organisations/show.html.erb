@@ -1,0 +1,17 @@
+<h1><%= @organisation.name %></h1>
+<h4><%= @organisation.address %></h4>
+<hr>
+<h4>Managements</h4>
+<% @organisation.managements.each do |mgmt| %>
+
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <p><%=mgmt.name%></p>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <%= link_to 'view', user_organisation_management_path(@user,@organisation,mgmt), class:"btn btn-primary" %>
+  </div>
+</div>
+
+<% end %>
+
+<%= link_to 'create Mgmt', new_user_organisation_management_path(@user,@organisation), class:"btn btn-success" %>.
